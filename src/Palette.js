@@ -1,16 +1,7 @@
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
-function Palette() {
-  const colors = {
-    0: "#EE6352",
-    1: "#08B2E3",
-    2: "#EFE9F4",
-    3: "#57A773",
-    4: "#484D6D",
-    5: "#340068",
-  };
-
+function Palette(props) {
   const size = 6;
   const pallete = [];
 
@@ -21,8 +12,9 @@ function Palette() {
           style={{
             width: "80px",
             height: "80px",
-            backgroundColor: colors[col],
+            backgroundColor: props.colors[col],
           }}
+          onClick={() => props.handleColorClick(col)}
         />
       </Grid>
     );
